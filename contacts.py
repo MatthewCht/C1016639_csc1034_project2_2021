@@ -2,15 +2,20 @@
 class Contact:
 
     #constructor
-    def __init__(self, name, dob, phone_number):
-        self.name == name
-        self.dob == dob
-        self.number == phone_number
+    def __init__(self, name, dob, address, phone_num):
+        self.name = name
+        self.dob = dob
+        self.address = address
+        self.phone_num = phone_num
 
-    def display(self):
-        return f"{self.name}{self.dob}{self.phone_number}"
 
 #main
 if __name__=="__main__":
+
     #create a contact
-    con1 = Contact("Harry", "17 November", "0728327823")
+    con1 = Contact(input("Enter name: "), input("Enter date of birth: "), input("Enter address: "), input("Enter phone number: "))
+
+    print('Name: ' + con1.name,
+          '\nDate of Birth: ' + con1.dob,
+          '\nAddress: ' + con1.address,
+          '\nPhone Number: ' + con1.phone_num)
