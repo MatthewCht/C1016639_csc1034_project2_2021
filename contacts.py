@@ -12,9 +12,10 @@ class Contact:
 #main
 if __name__=="__main__":
 
-    #create a contact
+    #create a contact through accepting inputs
     con1 = Contact(input("Enter name: "), input("Enter date of birth: "), input("Enter address: "), input("Enter phone number: "))
 
+    #prints the contents of contact 1
     print('Name: ' + con1.name,
           '\nDate of Birth: ' + con1.dob,
           '\nAddress: ' + con1.address,
