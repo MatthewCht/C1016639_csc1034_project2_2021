@@ -9,14 +9,25 @@ class Contact:
         self.phone_num = phone_num
 
 
+
 #main
 if __name__=="__main__":
 
-    #create a contact through accepting inputs
-    con1 = Contact(input("Enter name: "), input("Enter date of birth: "), input("Enter address: "), input("Enter phone number: "))
+    AddContact = input('Do you want to add a new input? (Y/N)')
+    while AddContact == ('Y'):
 
-    #prints the contents of contact 1
-    print('Name: ' + con1.name,
-          '\nDate of Birth: ' + con1.dob,
-          '\nAddress: ' + con1.address,
-          '\nPhone Number: ' + con1.phone_num)
+        #create a contact through accepting inputs
+        con1 = Contact(input("Enter name: "), input("Enter date of birth: "), input("Enter address: "), input("Enter phone number: "))
+
+        #prints the contents of contact 1
+        print('Name: ' + con1.name,
+            '\nDate of Birth: ' + con1.dob,
+            '\nAddress: ' + con1.address,
+            '\nPhone Number: ' + con1.phone_num)
+
+        AddContact = input('Do you want to add a new input? (Y/N)')
+
+    else:
+
+        print('All processes complete')
+
