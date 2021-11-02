@@ -41,16 +41,51 @@ if __name__=="__main__":
         file.close()
         AddContact = input('Do you want to add a new input? (Y/N)')
 
+    #asks user for input to feed into while loop
     else:
         findcontact = input('Do you want to search for a contact? (Y/N)')
 
+    #creates a while loop for finding a contact
     while findcontact == ('Y'):
-        #reference from 'https://www.kite.com/python/answers/how-to-search-for-text-in-a-file-in-python'
-        contactkey = input('What is the Contacts name (case sensitive):')
-        to_find = contactkey
-        a_file = open("Contacts.txt")
 
-        for line in a_file:
-            if to_find in line:
+        contactkey = input('What is the Contacts name (case sensitive):')
+        contactfile = open("Contacts.txt")
+
+        # reference from 'https://www.kite.com/python/answers/how-to-search-for-text-in-a-file-in-python'
+        for line in contactfile:
+            if contactkey in line:
                 print(line)
         findcontact = input('Do you want to search for a contact? (Y/N)')
+
+    else:
+        editcontact = input('Do you want to edit a contact? (Y/N)')
+
+    while editcontact == ('Y'):
+        contactfile = open("Contacts.txt")
+        list_of_lines = contactfile.readline()
+        linenum = int(input('input the number of the line you want to change'))
+
+        con = Contact(input("Enter name: "),
+                      input("Enter date of birth: "),
+                      input("Enter address: "),
+                      input("Enter phone number: "))
+
+        contactp1 = ('Name: ' + con.name, '  Date of Birth: ' + con.dob)
+        contactp2 = ('  Address: ' + con.address, '  Phone Number: ' + con.phone_num)
+        contact1 = str(contactp1 + contactp2)
+
+        list_of_lines[4] = (contact1)
+
+        contactfile = open('Contacts.txt', 'w')
+        contactfile.writelines(list_of_lines)
+        contactfile.close()
+        editcontact = input('Do you want to edit a contact? (Y/N)')
+
+    else:
+        print('All operations complete')
+
+
+
+
+
+
