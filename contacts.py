@@ -42,6 +42,15 @@ if __name__=="__main__":
         AddContact = input('Do you want to add a new input? (Y/N)')
 
     else:
+        findcontact = input('Do you want to search for a contact? (Y/N)')
 
-        print('All processes complete')
+    while findcontact == ('Y'):
+        #reference from 'https://www.kite.com/python/answers/how-to-search-for-text-in-a-file-in-python'
+        contactkey = input('What is the Contacts name (case sensitive):')
+        to_find = contactkey
+        a_file = open("Contacts.txt")
 
+        for line in a_file:
+            if to_find in line:
+                print(line)
+        findcontact = input('Do you want to search for a contact? (Y/N)')
