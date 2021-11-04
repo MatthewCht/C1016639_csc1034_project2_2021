@@ -62,27 +62,44 @@ if __name__=="__main__":
 
     while editcontact == ('Y'):
         contactfile = open("Contacts.txt")
-        list_of_lines = contactfile.readline()
-        linenum = int(input('input the number of the line you want to change'))
+        contactkey = input('What is the Contacts name (case sensitive):')
+        for line in contactfile:
+            if contactkey in line:
+                contactkey = line
+
+        with open('Contacts.txt', 'r') as file:
+            lines = file.readlines()
+
+        with open('Contacts.txt', 'w') as file:
+            for line in lines:
+                if line.strip('\n') != contactkey:
+                    file.write(line)
 
         con = Contact(input("Enter name: "),
                       input("Enter date of birth: "),
                       input("Enter address: "),
                       input("Enter phone number: "))
 
+        # prints the contents of the contact
+        print('\nName: ' + con.name,
+              '  Date of Birth: ' + con.dob,
+              '  Address: ' + con.address,
+              '  Phone Number: ' + con.phone_num)
+
+        # takes the first and second half of the contact then concatonates them so it can be written to the file
         contactp1 = ('Name: ' + con.name, '  Date of Birth: ' + con.dob)
         contactp2 = ('  Address: ' + con.address, '  Phone Number: ' + con.phone_num)
         contact1 = str(contactp1 + contactp2)
 
-        list_of_lines[4] = (contact1)
+        # writes the contact to the text file
+        file = open('Contacts.txt', 'a')
+        file.write('\n' + contact1)
+        file.close()
 
-        contactfile = open('Contacts.txt', 'w')
-        contactfile.writelines(list_of_lines)
-        contactfile.close()
         editcontact = input('Do you want to edit a contact? (Y/N)')
 
-    else:
-        print('All operations complete')
+else:
+    print('All operations complete')
 
 
 
