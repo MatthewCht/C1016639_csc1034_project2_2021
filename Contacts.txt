@@ -5,3 +5,5 @@
 ('Name: Matthew', '  Date of Birth: 1 Dec', '  Address: Gretna road', '  Phone Number: 4684728462')
 ('Name: Martin', '  Date of Birth: 23 dec', '  Address: Granville drive', '  Phone Number: 7546742605')
 ('Name: Jake', '  Date of Birth: 29 jan', '  Address: 43 Granger grove', '  Phone Number: 0375748658272')
+
+('Name: Nathan', '  Date of Birth: 7 july', '  Address: veranda ave', '  Phone Number: 024724738682')

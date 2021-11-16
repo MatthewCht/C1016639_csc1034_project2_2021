@@ -111,6 +111,7 @@ if __name__ == "__main__":
 
     while DeleteContact == 'Y':
         ContactFile = open("Contacts.txt")
+        print('When entering the name please enter the full name as all which contain this will be deleted also')
         ContactKey = input('What is the Contacts name (case sensitive):')
         for line in ContactFile:
             if ContactKey in line:
