@@ -67,6 +67,7 @@ if __name__ == "__main__":
     else:
         EditContact = input('Do you want to edit a contact? (Y/N)')
 
+    # allows for a contact to be edited by deleting it then replacing it with the desired information
     while EditContact == 'Y':
         ContactFile = open("Contacts.txt")
         ContactKey = input('What is the Contacts name (case sensitive):')
@@ -104,6 +105,25 @@ if __name__ == "__main__":
         file.close()
 
         EditContact = input('Do you want to edit a contact? (Y/N)')
+
+    else:
+        DeleteContact = input('Do you want to delete a contact? (Y/N)')
+
+    while DeleteContact == 'Y':
+        ContactFile = open("Contacts.txt")
+        ContactKey = input('What is the Contacts name (case sensitive):')
+        for line in ContactFile:
+            if ContactKey in line:
+                ContactKey = line
+
+        with open('Contacts.txt', 'r') as file:
+            lines = file.readlines()
+
+        with open('Contacts.txt', 'w') as file:
+            for line in lines:
+                if line.strip('\n') != ContactKey:
+                    file.write(line)
+        DeleteContact = input('Do you want to delete a contact? (Y/N)')
 
 else:
     print('All operations complete')
