@@ -19,3 +19,21 @@ Once this application is run it will ask what the user wants to do via a series 
 Once the user has selected the process desired they must input the indicated information then the process will be carried out and the information will be displayed if necessary.
 
 ## Use Case:
+When asked for a choice between Y or N such as in this line:
+
+    ContactList = input('Do you want view the contacts list? (Y/N):')
+ 
+if you input 'Y' it will allow you to carry out that function but if you input anything else it won't be carried out and it will carry on to the next function until there are none left then the file will close.
+
+
+
+
+When asked to input details for the contact such as in these lines:
+
+    con = Contact(input("Enter name: "),
+                      input("Enter date of birth(dd/mm/yyyy): "),
+                      input("Enter address: "),
+                      input("Enter phone number: "))
+
+You should input name, the date of birth, address then phone number, as indicated.
+The phone number must be 11 characters long, or you will have to put it in again until it is.
