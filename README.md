@@ -15,6 +15,7 @@ Each of these can be done as many as wanted but once you no longer want to do it
 * They know all the information of the contact they are adding and not just some
 
 ## How To Run:
-Once this application is run it will ask what the user wants to do via a series of questions and if you want to 
+Once this application is run it will ask what the user wants to do via a series of questions and if you want to the user must enter 'Y'.
+Once the user has selected the process desired they must input the indicated information then the process will be carried out and the information will be displayed if necessary.
 
 ## Use Case:

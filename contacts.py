@@ -1,7 +1,4 @@
 # class definition
-import char as char
-
-
 class Contact:
 
     # constructor
@@ -77,16 +74,16 @@ if __name__ == "__main__":
     while EditContact == 'Y':
         ContactFile = open("Contacts.txt")
         ContactKey = input('What is the Contacts name (case sensitive):')
-        for line in ContactFile:
-            if ContactKey in line:
-                ContactKey = line
 
+        # reference from 'https://www.pythonforbeginners.com/files/how-to-delete-a-specific-line-in-a-file'
         with open('Contacts.txt', 'r') as file:
             lines = file.readlines()
 
         with open('Contacts.txt', 'w') as file:
             for line in lines:
-                if line.strip('\n') != ContactKey:
+                if line.find(ContactKey) != -1:
+                    pass
+                else:
                     file.write(line)
 
         con = Contact(input("Enter name: "),
@@ -102,6 +99,9 @@ if __name__ == "__main__":
               '  Date of Birth: ' + con.dob,
               '  Address: ' + con.address,
               '  Phone Number: ' + con.phone_num)
+
+        while len(con.phone_num) != 11:
+            con.phone_num = input("Please enter a valid phone number: ")
 
         # takes the first and second half of the contact then concatenates them so it can be written to the file
         ContactP1 = ('Name: ' + con.name, '  Date of Birth: ' + con.dob)
@@ -122,16 +122,15 @@ if __name__ == "__main__":
         ContactFile = open("Contacts.txt")
         print('When entering the name please enter the full name as all which contain this will be deleted also')
         ContactKey = input('What is the Contacts name (case sensitive):')
-        for line in ContactFile:
-            if ContactKey in line:
-                ContactKey = line
 
         with open('Contacts.txt', 'r') as file:
             lines = file.readlines()
 
         with open('Contacts.txt', 'w') as file:
             for line in lines:
-                if line.strip('\n') != ContactKey:
+                if line.find(ContactKey) != -1:
+                    pass
+                else:
                     file.write(line)
         DeleteContact = input('Do you want to delete a contact? (Y/N)')
 
