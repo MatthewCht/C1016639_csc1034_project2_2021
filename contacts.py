@@ -1,4 +1,7 @@
 # class definition
+import char as char
+
+
 class Contact:
 
     # constructor
@@ -27,9 +30,12 @@ if __name__ == "__main__":
 
         # create a contact through accepting inputs
         con = Contact(input("Enter name: "),
-                      input("Enter date of birth: "),
+                      input("Enter date of birth(dd/mm/yyyy): "),
                       input("Enter address: "),
                       input("Enter phone number: "))
+
+        while len(con.phone_num) != 11:
+            con.phone_num = input("Please enter a valid phone number: ")
 
         # prints the contents of the contact
         print('\nName: ' + con.name,
@@ -84,9 +90,12 @@ if __name__ == "__main__":
                     file.write(line)
 
         con = Contact(input("Enter name: "),
-                      input("Enter date of birth: "),
+                      input("Enter date of birth(dd/mm/yyyy): "),
                       input("Enter address: "),
                       input("Enter phone number: "))
+
+        while len(con.phone_num) != 11:
+            con.phone_num = input("Please enter a valid phone number: ")
 
         # prints the contents of the contact
         print('\nName: ' + con.name,

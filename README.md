@@ -2,7 +2,7 @@
 
 
 ## Project Overview:
-This allows the user to access a contacts list to view or edit it.
+This application allows the user to access a contacts list to view or edit it.
 A contact can be found individually or in groups based on contact information, or it can show the entire list at once.
 The contact information can be edited by adding new contacts, editing existing contacts or deleting contacts.
 Each of these can be done as many as wanted but once you no longer want to do it you will have to restart the program to do it again.
@@ -13,3 +13,8 @@ Each of these can be done as many as wanted but once you no longer want to do it
 * When editing a contact the user will change it all and re-write what they want to keep the same
 * If they want to say yes they type exactly 'Y' and not 'y' or 'yes' to make the while loops work
 * They know all the information of the contact they are adding and not just some
+
+## How To Run:
+Once this application is run it will ask what the user wants to do via a series of questions and if you want to 
+
+## Use Case:
